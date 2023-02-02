@@ -1,0 +1,59 @@
+ /* estilo de la página  producto  */
+.product_contenedor{
+    display: flex;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+    background-color: rgba(37, 61, 85, 0.93);
+    
+
+}
+.product_items{
+flex-direction: column;
+margin: 2%;
+width: 50%;
+background-color: slategrey;
+padding: 30px;
+border-radius:5px ;
+box-shadow:  7px 5px 10px  rgba(0, 0, 0, 0.743);
+justify-content: center;
+align-items: center;
+}
+.product_items:hover{
+   opacity: .65;
+}
+
+ /* estilo de la página  Pagar  */
+.pagar_img{
+    width: 30%;
+}
+
+.pagar_contenedor{
+    display: flex;
+    border: 2px solid black;
+    justify-content: center;
+    align-items: center;
+    min-width: 33%;
+    border-radius: 5px;
+    margin: 20px;
+    background-color: rgba(37, 61, 85, 0.93);
+
+}
+.pagar_items{
+flex-direction: column;
+margin: 5%;
+width: 100%;
+background-color: slategrey;
+padding: 30px;
+border-radius:5px ;
+box-shadow:  7px 5px 10px  rgba(0, 0, 0, 0.743);
+justify-content: center;
+align-items: center;
+}
+
+.pagar_img{
+    width: 70%;
+}

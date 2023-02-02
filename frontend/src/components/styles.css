@@ -8,7 +8,7 @@
     border-radius: 5px;
     margin: 10px 0 10px 0;
     background-color: rgba(37, 61, 85, 0.93);
-    
+   
 
 }
 .product_items{
@@ -21,12 +21,25 @@ border-radius:5px ;
 box-shadow:  7px 5px 10px  rgba(0, 0, 0, 0.743);
 justify-content: center;
 align-items: center;
+color: white;
 }
 .product_items:hover{
    opacity: .65;
 }
+.paar_items h3,p{
+    color: white;
+}
 
  /* estilo de la página  Pagar  */
+ .pagar_raiz{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    
+ }
+
 .pagar_img{
     width: 30%;
 }
@@ -56,4 +69,42 @@ align-items: center;
 
 .pagar_img{
     width: 70%;
+}
+form{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 20px;
+}
+form  label input{
+    margin: 20px;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+label{
+    font-size: 25px;
+    padding: 5px;
+    margin: 5px;
+}
+
+
+/* ******** */
+/* Pagada  */
+.pagada__exito-contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.pagada__exito-icon{
+    width: 100%;
+    font-size: 200px;
+    
 }

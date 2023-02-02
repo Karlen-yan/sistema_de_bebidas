@@ -4,7 +4,7 @@ import './styles.css'
 function Pagar(){
 // HOOKS
 return(
-        <div>
+        <div className="pagar_raiz">
         	<h2>Agregar nuevo  Productos</h2>
             <div className='pagar_contenedor'>
             <div className="paar_items">
@@ -14,13 +14,20 @@ return(
                 <p>Precio</p>
              </div>
             </div>
-
+            <div>
             <form action='' method='post'>
-                <input type="text" name="Datos de la cuenta" value="" />
-                <input type="text" name="data" value="" />
-                <input type="text" name="cv" value="" />
+                <label for="datosCuenta">Datos de la cuenta</label>
+                <input type="text" id='datosCuenta' name="Datos de la cuenta" value="" />
+                <label for="data">Data</label>
+                <input type="text" id='data' name="data" value="" />
+                <label for="cv">CV</label>
+                <input type="text" id='cv' name="cv" value="" />
+
                 <input type="submit" name="" value="Comprar" />
             </form>
+                
+            </div>
+
         </div>
     );
        

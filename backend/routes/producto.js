@@ -28,16 +28,7 @@ const mostrar = async ()=>{
 // router.get('/obtenerproductos',userController.getProducto) 
 
 const getProductos = async (req,res)=>{
-    res.end(JSON.stringify(await mostrar()));
-    
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Origin");
-    res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Max-Age", "1800");
-    res.setHeader("Access-Control-Allow-Headers", "content-type");
-    res.setHeader("Access-Control-Allow-Methods","PUT, POST, GET, DELETE, PATCH, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type");
-       
+    res.end(JSON.stringify(await mostrar()));   
 }
 
 module.exports = {getProductos}

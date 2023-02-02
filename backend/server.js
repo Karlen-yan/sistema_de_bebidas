@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
+const cors = require('cors')
 const app = express()
 //importar conexión mongoDB
 const archivoBD = require('./model/conexion')
@@ -12,6 +13,7 @@ const rutaProducto = require('./routes/producto')
 // app.use(bodyParser.json)
 // app.use(bodyParser.urlencoded({extended:'true'}))
 
+app.use(cors())
 app.use('/productos',rutaProducto.getProductos)
 app.get('/',(req,res)=>{
 

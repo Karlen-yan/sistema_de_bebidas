@@ -18,14 +18,16 @@ const ModeloProducto = mongoose.model('productos',productoSchema)
 
 
 const mostrar = async ()=>{
-    // proba1
+    
+    
     const productos = await ModeloProducto.find();
+
     console.log(productos);
     return productos;
 }
 
 //  Obtener todos los productos 
-// router.get('/obtenerproductos',userController.getProducto) 
+router.get('/obtenerproductos',userController.getProducto) 
 
 const getProductos = async (req,res)=>{
     res.end(JSON.stringify(await mostrar()));   

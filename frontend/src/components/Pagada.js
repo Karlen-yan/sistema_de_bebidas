@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function EditarProductos(){
+function Pagada(){
 
 return(
         <div className="pagada__exito-contenedor">
@@ -14,4 +14,4 @@ return(
     );
 }
 
-export default EditarProductos;
+export default Pagada;

@@ -16,8 +16,6 @@ const rutaProducto = require('./routes/producto')
 app.use(cors())
 app.use('/productos',rutaProducto.getProductos)
 app.get('/',(req,res)=>{
-
-
     res.end('Bienvenidos al servidor backend Node.js. Corriendo.')
 })
 

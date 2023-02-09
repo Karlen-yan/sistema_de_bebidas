@@ -14,7 +14,10 @@ const rutaProducto = require('./routes/producto')
 // app.use(bodyParser.urlencoded({extended:'true'}))
 
 app.use(cors())
+
 app.use('/productos',rutaProducto.getProductos)
+app.use('/mezclas',rutaProducto.getProductoMezcla)
+
 app.get('/',(req,res)=>{
     res.end('Bienvenidos al servidor backend Node.js. Corriendo.')
 })

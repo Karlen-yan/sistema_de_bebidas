@@ -4,7 +4,7 @@ import { BrowserRouter,Route, Routes } from 'react-router-dom';
 import ListaProductos from './ListaProductos';
 import Pagar from './components/Pagar';
 import Pagada from './components/Pagada';
-import Producto from './components/Producto';
+import Producto from './components/Bebidas';
 function App() {
   return (
 

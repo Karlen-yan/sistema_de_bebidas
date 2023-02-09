@@ -13,8 +13,19 @@ getProducto = ((req,res,next)=>{
 })
  next()
 })
+getProductoMezcla = ((req,res,next)=>{
+    ModeloProductomezcla.find({},function(mezcla, err){
+
+        res.send(mezcla)
+      
+    // collection.find({}).toArray((err, data) => {
+    //     res.send(data);
+        
+})
+ next()
+})
 
 
-module.exports = {producto,getProducto}
+module.exports = {producto,getProducto,getProductoMezcla}
 
  

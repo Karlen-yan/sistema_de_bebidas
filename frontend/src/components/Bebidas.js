@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import './styles.css'
-// import uniqid from 'uniqid'
-// import axios from 'axios';
+
 
 function Productos({producto}){
 
 return(
-       
-                
+            
              <div className="product_items">
                 
                 <h3>{producto.nombre}</h3>
@@ -16,6 +14,8 @@ return(
                 <p>Precio: {producto.precio}</p>
                 <p>Id de producto: {producto._id}</p>
              </div>
+
+
     
       
     );

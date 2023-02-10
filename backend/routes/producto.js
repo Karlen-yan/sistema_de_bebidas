@@ -39,8 +39,6 @@ const getProductos = async (req,res)=>{
     res.end(JSON.stringify(await mostrar()));   
 }
 
-
-
 const mostrarMezcla = async ()=>{
     
     const mezcla = await ModeloProductomezcla.find();

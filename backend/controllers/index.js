@@ -7,8 +7,7 @@ getProducto = ((req,res,next)=>{
 
         res.send(producto)
       
-    // collection.find({}).toArray((err, data) => {
-    //     res.send(data);
+
         
 })
  next()
@@ -18,8 +17,7 @@ getProductoMezcla = ((req,res,next)=>{
 
         res.send(mezcla)
       
-    // collection.find({}).toArray((err, data) => {
-    //     res.send(data);
+  
         
 })
  next()

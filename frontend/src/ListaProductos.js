@@ -1,20 +1,20 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Producto from './components/Bebidas';
+import Bebida from './components/Bebidas';
 import Mezclas from './components/Mezclas';
 // import { Formik, Form, Field } from 'formik';
 import './App.css';
 
 function ListaProductos(){
     //   old 
-    const[dataProducto,setDataproducto] = useState([]);
+    const[databebida,setDatabebida] = useState([]);
     const[dataProductoMezcla,setdataProductoMezcla] = useState([]);
 
     useEffect(()=>{
         axios.get('http://127.0.0.1:5000/productos').then(res =>{
             
            console.log(res.data);
-           setDataproducto(res.data);
+           setDatabebida(res.data);
         }).catch(err =>{
             console.log(err)
         });
@@ -27,16 +27,16 @@ function ListaProductos(){
         })
     },[])
 
-const listaProductos = dataProducto.map(producto => {
+const listaBebidas = databebida.map(bebida => {
     return(
-        <div>
-            <Producto producto={producto}/>
+        <div key={bebida._id}>
+            <Bebida bebida={bebida}/>
         </div>
     )
 })
 const listaProductosMezclas = dataProductoMezcla.map(mezcla => {
     return(
-        <div>
+        <div key={mezcla._id}>
             <Mezclas mezcla={mezcla}/>
         </div>
     )
@@ -49,8 +49,12 @@ return(
 
        </div>
         <div className='product_contenedor'>
-            {listaProductos}
+            {listaBebidas}
         </div>
+        <div className='lista_productos'>
+        	<h2>Lista de Mezclas</h2>
+
+       </div>
         <div className='product_contenedor'>
             {listaProductosMezclas}
         </div>

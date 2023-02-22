@@ -6,19 +6,16 @@ getProducto = ((req,res,next)=>{
     ModeloProducto.find({},function(producto, err){
 
         res.send(producto)
-      
-
         
 })
  next()
 })
+
 getProductoMezcla = ((req,res,next)=>{
     ModeloProductomezcla.find({},function(mezcla, err){
 
         res.send(mezcla)
       
-  
-        
 })
  next()
 })

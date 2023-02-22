@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import {useNavigate} from "react-router-dom";
 import Bebida from './components/Bebidas';
 import Mezclas from './components/Mezclas';
-// import { Formik, Form, Field } from 'formik';
+
 import './App.css';
 
 function ListaProductos(){
@@ -41,12 +42,18 @@ const listaProductosMezclas = dataProductoMezcla.map(mezcla => {
         </div>
     )
 })
+const navigate = useNavigate();
+
+
+function handleBuyClick() {
+        navigate("/pagar");
+      }
 
 return(
+ 
        <>
        <div className='lista_productos'>
         	<h2>Lista de Productos</h2>
-
        </div>
         <div className='product_contenedor'>
             {listaBebidas}
@@ -58,8 +65,8 @@ return(
         <div className='product_contenedor'>
             {listaProductosMezclas}
         </div>
-            <a >Pagar</a>
-       </>
+    <button onClick={handleBuyClick}>Pagar</button>
+    </>
     );
 }
 

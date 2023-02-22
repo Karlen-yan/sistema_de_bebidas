@@ -21,14 +21,14 @@ const productoSchemaMezcla = new eschema({
 
 
 const ModeloProducto = mongoose.model('productos',productoSchema)
-const ModeloProductomezcla = mongoose.model('mezclas',productoSchemaMezcla)
+const ModeloProductoMezcla = mongoose.model('mezclas',productoSchemaMezcla)
 
 
 const mostrar = async ()=>{
-    
-    const productos = await ModeloProducto.find();
 
+    const productos = await ModeloProducto.find();
     console.log(productos);
+
     return productos;
 }
 
@@ -40,17 +40,19 @@ const getProductos = async (req,res)=>{
 }
 
 const mostrarMezcla = async ()=>{
-    
-    const mezcla = await ModeloProductomezcla.find();
+
+    const mezcla = await ModeloProductoMezcla.find();
     console.log(mezcla);
+    
     return mezcla;
 }
 
 //  Obtener todos los productos 
-router.get('/obtenerproductos',userController.getProductoMezcla) 
+router.get('/obtenerproductos2',userController.getProductoMezcla) 
 
 const getProductoMezcla = async (req,res)=>{
-    res.end(JSON.stringify(await mostrar(mostrarMezcla)));   
+    res.end(JSON.stringify(await mostrarMezcla()));
+
 }
 
 module.exports = {getProductos,getProductoMezcla}

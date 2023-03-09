@@ -12,6 +12,7 @@ const productoSchema = new eschema({
     descripcion: String,
     precio:  Number
 }) 
+
 const productoSchemaMezcla = new eschema({
     _id: String,
     nombre: String,
@@ -27,8 +28,6 @@ const ModeloProductoMezcla = mongoose.model('mezclas',productoSchemaMezcla)
 const mostrar = async ()=>{
 
     const productos = await ModeloProducto.find();
-    console.log(productos);
-
     return productos;
 }
 
@@ -39,20 +38,57 @@ const getProductos = async (req,res)=>{
     res.end(JSON.stringify(await mostrar()));   
 }
 
+
+
 const mostrarMezcla = async ()=>{
 
-    const mezcla = await ModeloProductoMezcla.find();
-    console.log(mezcla);
-    
+    const mezcla = await ModeloProductoMezcla.find();    
     return mezcla;
 }
 
 //  Obtener todos los productos 
 router.get('/obtenerproductos2',userController.getProductoMezcla) 
 
+
+
 const getProductoMezcla = async (req,res)=>{
     res.end(JSON.stringify(await mostrarMezcla()));
 
 }
 
-module.exports = {getProductos,getProductoMezcla}
+
+// router.delete('products/:id',(req, res)=>{
+//     const id = req.params.id;
+//     ModeloProducto.findByIdAndDelete(id,(err, product)=>{
+//         if(err) throw err;
+//         res.send(`Producto ${product.name} se eliminó.`);
+//     });
+// });
+// old
+
+router.delete('/products/:id',userController.deleteProducto) 
+
+const eliminarProducto = async () => {
+    ModeloProducto.findByIdAndDelete(req.params.id);
+}
+
+// // Eliminar un producto por id
+const deleteProducto =  async (req, res) => {
+    res.end(JSON.stringify(await eliminarProducto()));
+};
+  
+//   // Eliminar una mezcla por id
+//   router.delete('/mezclas/:id', async (req, res) => {
+//     try {
+//       const mezcla = await ModeloProductoMezcla.findByIdAndDelete(req.params.id);
+//       if (!mezcla) {
+//         return res.status(404).send();
+//       }
+//       res.send(mezcla);
+//     } catch (error) {
+//       res.status(500).send(error);
+//     }
+//   });
+  
+
+module.exports = {getProductos,getProductoMezcla,deleteProducto}

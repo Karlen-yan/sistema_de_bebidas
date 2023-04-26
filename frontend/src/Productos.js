@@ -9,7 +9,7 @@ function ListaProductos(){
     const[dataProducto,setDataproducto] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://127.0.0.1:5000/productos').then(res =>{
+        axios.get('http://127.0.0.1:5000/bebidas').then(res =>{
            console.log(res.data);
            setDataproducto(res.data);
         }).catch(err =>{

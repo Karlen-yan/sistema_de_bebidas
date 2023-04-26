@@ -19,7 +19,7 @@ function Mezclas({ mezcla }) {
 
   return (
     <div className="product_items" onClick={handleClick}>
-      <h3>{mezcla.nombre}</h3>
+      <h3>{mezcla.name}</h3>
 
       <img
         className="pagar_img"
@@ -28,10 +28,10 @@ function Mezclas({ mezcla }) {
       />
 
       <p>
-        Descripción{mezcla.descripcion}
+        Descripción: {mezcla.descripcion}
       </p>
       <p>
-        Precio: {mezcla.precio}
+        Precio: {mezcla.price}
       </p>
       <p>
         Id de producto: {mezcla._id}

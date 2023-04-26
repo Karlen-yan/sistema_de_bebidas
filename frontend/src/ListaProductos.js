@@ -12,7 +12,7 @@ function ListaProductos(){
     const[dataProductoMezcla,setdataProductoMezcla] = useState([]);
 
     useEffect(()=>{
-        axios.get('http://127.0.0.1:5000/productos').then(res =>{
+        axios.get('http://127.0.0.1:5000/bebidas').then(res =>{
             
            console.log(res.data);
            setDatabebida(res.data);
@@ -50,7 +50,7 @@ function handleBuyClick() {
       }
 
 return(
- 
+   
        <>
        <div className='lista_productos'>
         	<h2>Lista de Productos</h2>

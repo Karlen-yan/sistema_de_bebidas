@@ -47,18 +47,16 @@ cursor: pointer;
     
  }
 
-.pagar_img{
-    width: 30%;
-}
+
 
 .pagar_contenedor{
-    display: flex;
+    /* display: flex; */
     border: 2px solid black;
-    justify-content: center;
+    /* justify-content: center;
     align-items: center;
     min-width: 33%;
     border-radius: 5px;
-    margin: 20px;
+    margin: 20px; */
     background-color: rgba(37, 61, 85, 0.93);
 
 }
@@ -77,7 +75,11 @@ align-items: center;
 }
 
 .pagar_img{
-    width: 70%;
+    width: 50%;
+    margin: auto;
+    display: flex; 
+    align-items: center;
+    padding: 10px;
 }
 form{
     width: 100%;

@@ -3,6 +3,17 @@ import "./styles.css";
 import { useStore } from "./store";
 import axios from "axios";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Container } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import Grid from '@mui/material/Grid';
+import NavBar from './NavBar';
+
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { CardActionArea } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+
 
 function Pagar() {
   const { selectedBebida, selectedMezcla, unselectedBebida ,unselectedMezcla } = useStore();
@@ -38,55 +49,84 @@ function Pagar() {
           console.error(err);
         });
     }
+  
   };
+
+  const ProductGrid = styled(Grid)({
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+    backgroundColor: 'rgb(28, 17, 82)',
+    padding: '15px',
+    margin:'15px',    
+});
+
   return (
-    <div className="pagar_raiz">
-      <div className="pagar_contenedor">
-        <div className="paar_items">
-          <h2
-            style={{
-              color: "white"
-            }}
-          >
+    <>
+    <Container maxWidth="xl">
+     <NavBar />
+     <div style={{ backgroundColor: 'rgb(28, 17, 82)', textAlign: "center", color: "white", textShadow: "0.50px 0.50px 15px white", padding: 15 }} >
+          <h2>
             Agregar nuevo Productos
           </h2>
-          <div className="seleccionada__contenido">
-
-           {/* Select bebida  */}
-            <div className="seleccionada__caja-bebida">
-              {selectedBebida != null
-                ? <div>
-                    <h3> Bebida seleccionada : </h3>
-                    <p>Nombre: { selectedBebida.nombre}</p>
-                    <p> Descripción: {selectedBebida.descripcion} </p>
-                    <p> Precio: {selectedBebida.precio} </p>
-                    <p> Id: {selectedBebida._id} </p>
-                  </div>
-                : null} 
-             </div>
-             
-             {/* SelectMezcla */}
-            <div className="seleccionada__caja-mezcla">
-             {selectedMezcla != null
-                ? <div>
-                    <h3> Mezcla seleccionada : </h3>
-                    <p> Nombre: {selectedMezcla.name} </p>
-                    <p> Descripción: {selectedMezcla.descripcion} </p>
-                    <p> Precio: {selectedMezcla.price} </p>
-                    <p> Id: {selectedMezcla._id} </p>
-                  </div>
-                : null}
-            </div>
-
           </div>
-        </div>
-      </div>
+          <ProductGrid>
+            <Card sx={{ maxWidth: 600,boxShadow:'1px 3px 20px silver', backgroundImage: 'linear-gradient(180deg, #ff6ccd 0, #f163d2 12.5%, #df5bd7 25%, #ca54dc 37.5%, #b14ee0 50%, #934ae4 62.5%, #6d49e8 75%, #3049ec 87.5%, #004bf0 100%)',
+     }} >
+       <CardActionArea>
+        
+              {selectedBebida != null
+                ? <CardContent>
+                <Typography gutterBottom color="#fff" variant="h5" component="div">
+                    <h3> Bebida seleccionada : </h3>
+                    </Typography>
+                    <Typography gutterBottom color="#fff" variant="h4" component="div">
+                    <p>Nombre: { selectedBebida.nombre}</p>
+                    </Typography>
+                    <Typography variant="body2" color="text.#fff">
+                    <p> Descripción: {selectedBebida.descripcion} </p>
+                    </Typography>
+                    <Typography variant="body2" color="text.#fff">
+                    <p> Precio: {selectedBebida.precio} </p>
+                    </Typography>
+                    <Typography variant="body2" color="text.#fff">
+                    <p> Id: {selectedBebida._id} </p>
+                    </Typography>
+                  </CardContent>
+                : null} 
 
+        </CardActionArea>     
+  </Card>        
+             {/* SelectMezcla */}
+             <Card sx={{ maxWidth: 600,boxShadow:'1px 3px 20px silver', backgroundImage: 'linear-gradient(180deg, #ff6ccd 0, #f163d2 12.5%, #df5bd7 25%, #ca54dc 37.5%, #b14ee0 50%, #934ae4 62.5%, #6d49e8 75%, #3049ec 87.5%, #004bf0 100%)',
+     }} >
+       <CardActionArea>
+             {selectedMezcla != null
+                ? <CardContent>
+                <Typography gutterBottom color="#fff" variant="h5" component="div">
+                    <h3> Mezcla seleccionada : </h3>
+                    </Typography>
+                    <Typography gutterBottom color="#fff" variant="h4" component="div">
+                    <p> Nombre: {selectedMezcla.name} </p>
+                    </Typography>
+                    <Typography variant="body2" color="text.#fff">
+                    <p> Descripción: {selectedMezcla.descripcion} </p> </Typography>
+                    <Typography variant="body2" color="text.#fff">
+                    <p> Precio: {selectedMezcla.price} </p>
+                    </Typography>
+                    <Typography variant="body2" color="text.#fff">
+                    <p> Id: {selectedMezcla._id} </p>
+                    </Typography>
+                  </CardContent>
+                : null}
+                    </CardActionArea>     
+                  </Card>    
+            </ProductGrid>
       <div
         style={{
           width: "80%",
           height: "100%",
-          backgroundColor: "rgba(37, 61, 85, 0.93)",
+          backgroundColor: 'rgb(28, 17, 82)',
           margin: "0 auto",
           color: "white",
           boxShadow: "2px 2px 2px black",
@@ -173,17 +213,19 @@ function Pagar() {
                       {errors.cvc}
                     </div>}
                 />
-                <button type="submit" name="submit">
-                  Submit
-                </button>
+                <Button style={{margin:5, backgroundColor:'white'}} type="submit" name="submit">
+                  Comprar
+                </Button>
                 {formularioEnviado &&
-                  <p className="exito"> Formulario enviado con exito </p>}
+                <p className="exito"> Formulario enviado con exito </p>}
               </Form>
             );
           }}
+
         </Formik>
       </div>
-    </div>
+</Container>
+    </>
   );
 }
 export default Pagar;

@@ -1,28 +1,50 @@
 import React, { useEffect, useState } from 'react';
 import './styles.css'
 import {useStore}  from './store.js';
+import Typography from '@mui/material/Typography';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { CardActionArea } from '@mui/material';
 
 
 function Bebida({bebida}){
-   const {selectBebida,selectedBebida,unselectedBebida} = useStore()
+   const {selectBebida,selectedBebida,unselectedBebida} = useStore();
   
+    
    const handleClick = ()=>{
       selectBebida(bebida);
    }
 
-return(  
-         <div className="product_items" onClick={handleClick}>
-             <h3>{bebida.nombre}</h3>
+return(    
+  
+     <div onClick={handleClick}>
+      <Card sx={{ maxWidth: 200, backgroundImage: 'linear-gradient(180deg, #ff6ccd 0, #f163d2 12.5%, #df5bd7 25%, #ca54dc 37.5%, #b14ee0 50%, #934ae4 62.5%, #6d49e8 75%, #3049ec 87.5%, #004bf0 100%)',
+     }} >
+      <CardActionArea>
+      <img
+         className="pagar_img" 
+         src="https://m.media-amazon.com/images/I/61p27ip0nLL._AC_SX342_.jpg"
+         alt=""
+       />
+        <CardContent>
+          <Typography gutterBottom color="#fff" variant="h5" component="div">
+           <h3>{bebida.nombre}</h3>
+          </Typography>
+          <Typography variant="body2" color="text.#fff">
+          Descripción: {bebida.descripcion}
+          </Typography>
+          <Typography variant="body2" color="text.#fff">
+           Precio: {bebida.precio}
+          </Typography>
+          <Typography variant="body2" color="text.#fff">
+    Id de producto: {bebida._id}
 
-             <img className="pagar_img" src="https://www.bodeboca.com/sites/default/files/styles/mainbottle_normal/public/externals/3e1d4afc7b1b92c7c6b9b22ac711cd57.jpg?itok=WSPn4M8e" alt="" />
-            
-            <p>Descripción: {bebida.descripcion}</p>
-                
-            <p>Precio: {bebida.precio}</p>
-            
-            <p>Id de producto: {bebida._id}</p>
-             
-         </div>
-    );
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+     </div>
+  );
 }
-export default Bebida ;
+
+export default Bebida;

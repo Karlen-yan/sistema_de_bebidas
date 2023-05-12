@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import { BrowserRouter,Route, Routes } from 'react-router-dom';
 // import Productos from './view/Productos';
 import ListaProductos from './ListaProductos';
@@ -14,7 +14,6 @@ function App() {
           <Route path='/pagar' element={ <Pagar />} exact></Route>
           <Route path='/pagada' element={ <Pagada />} exact></Route>
           <Route path='/producto' element={ <Producto />} exact></Route>
-  
         </Routes>
       </BrowserRouter>
 

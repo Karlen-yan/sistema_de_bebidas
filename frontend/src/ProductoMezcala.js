@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Producto from './components/Bebidas';
 import { Formik, Form, Field } from 'formik';
-import './App.css'
+// import './App.css'
 
 function ListaMezcla(){
     //   old 

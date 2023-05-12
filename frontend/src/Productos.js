@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Producto from './components/Bebidas';
 import { Formik, Form, Field } from 'formik';
-import './App.css'
 
 function ListaProductos(){
     
@@ -22,15 +21,11 @@ const listaProductos = dataProducto.map(producto => {
         <div>
             <Producto producto={producto}/>
         </div>
-    )
-}
-    )
-
+    )})
 return(
        <>
        <div className='lista_productos'>
         	<h2>Lista de Productos</h2>
-
        </div>
         <div className='product_contenedor'>
             {listaProductos}
@@ -39,5 +34,4 @@ return(
        </>
     );
 }
-
 export default ListaProductos;
